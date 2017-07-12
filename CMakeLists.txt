@@ -13,6 +13,7 @@ include(sources.cmake)
 
 enable_language(C)
 enable_language(CXX)
+set(CMAKE_DEBUG_POSTFIX d)
 
 if(ANDROID)
   # Android-NDK CMake files reconfigure the path and so Go and Perl won't be
@@ -320,3 +321,5 @@ add_custom_target(
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
     DEPENDS all_tests bssl_shim
     ${MAYBE_USES_TERMINAL})
+
+install(EXPORT boringssl_targets DESTINATION ${CMAKE_INSTALL_CMAKEDIR})

@@ -57,3 +57,7 @@ if (WIN32)
   target_link_libraries(ssl_test ws2_32)
 endif()
 add_dependencies(all_tests ssl_test)
+
+install(TARGETS ssl EXPORT boringssl_targets
+  ARCHIVE DESTINATION ${CMAKE_INSTALL_CMAKEDIR}
+)
