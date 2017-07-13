@@ -59,5 +59,5 @@ endif()
 add_dependencies(all_tests ssl_test)
 
 install(TARGETS ssl EXPORT boringssl_targets
-  ARCHIVE DESTINATION ${CMAKE_INSTALL_CMAKEDIR}
+  ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
 )

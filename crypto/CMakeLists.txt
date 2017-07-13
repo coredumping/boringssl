@@ -277,9 +277,6 @@ add_dependencies(all_tests crypto_test)
 if(NOT CMAKE_INSTALL_LIBDIR)
   set(CMAKE_INSTALL_LIBDIR "lib")
 endif()
-if(NOT DEFINED CMAKE_INSTALL_CMAKEDIR)
-  set(CMAKE_INSTALL_CMAKEDIR "cmake")
-endif()
 install(TARGETS crypto EXPORT boringssl_targets
-  ARCHIVE DESTINATION ${CMAKE_INSTALL_CMAKEDIR}
+  ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
 )
